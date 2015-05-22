@@ -1,4 +1,4 @@
-package rating;
+package rating.model;
 
 /**
  * Created by weiluo on 20/05/15.
@@ -16,15 +16,7 @@ public class Authority {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }
