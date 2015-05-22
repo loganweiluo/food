@@ -3,9 +3,9 @@ package rating.distribution;
 import rating.establishment.Establishment;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 import static java.lang.Math.round;
 
@@ -16,7 +16,7 @@ public class DistributionCalculator {
     public List<RatingDistribution> calculateDistribution(List<Establishment> establishments) {
 
         ArrayList<RatingDistribution> result = new ArrayList<>();
-        HashMap<String, Integer> distributionCounts = new HashMap<>();
+        Map<String, Integer> distributionCounts = new TreeMap<>();
         for (Establishment establishment : establishments) {
             String ratingValue = establishment.getRatingValue();
             if (distributionCounts.keySet().contains(ratingValue)) {
@@ -32,7 +32,7 @@ public class DistributionCalculator {
         if (total > 0) {
             for (Map.Entry<String, Integer> distributionCount : distributionCounts.entrySet()) {
                 double percentage = (double) distributionCount.getValue() / total;
-                percentage = roundTo2DecimalPlaces(percentage*100);
+                percentage = roundTo2DecimalPlaces(percentage * 100);
                 RatingDistribution distribution = new RatingDistribution(distributionCount.getKey(), percentage);
                 result.add(distribution);
             }
