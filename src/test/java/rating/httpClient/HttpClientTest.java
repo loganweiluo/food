@@ -19,4 +19,14 @@ public class HttpClientTest {
         assertTrue(authoritiesJsonString.length() > 0);
         assertTrue(authoritiesJsonString.contains("authorities"));
     }
+
+    @Test
+    public void shouldGetEstablishmentsAsJsonString() throws IOException {
+        String establishmentsJsonString = client.getEstablishmentsJsonString("197");
+        assertTrue(establishmentsJsonString != null);
+        assertTrue(establishmentsJsonString.length() > 0);
+
+        System.out.println(establishmentsJsonString);
+//        assertTrue(establishmentsJsonString.contains("authorities"));
+    }
 }

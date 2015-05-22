@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import rating.authority.AuthorityService;
+import rating.distribution.DistributionCalculator;
+import rating.establishment.EstablishmentService;
 import rating.httpClient.HttpClient;
 
 /**
@@ -17,6 +19,16 @@ public class Application {
     @Bean
     public AuthorityService authorityService(){
         return new AuthorityService(httpClient());
+    }
+
+    @Bean
+    public EstablishmentService establishmentService(){
+        return new EstablishmentService(httpClient());
+    }
+
+    @Bean
+    public DistributionCalculator distributionCalculator(){
+        return new DistributionCalculator();
     }
 
     @Bean

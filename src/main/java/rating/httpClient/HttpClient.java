@@ -17,6 +17,7 @@ public class HttpClient {
 
     public static final String ROOT_URL = "api.ratings.food.gov.uk";
     public static final String AUTHORITIES = "/Authorities";
+    public static final String ESTABLISHMENTS = "/Establishments?localAuthorityId=";
 
     private String getContent(String requestURL) throws IOException {
         CloseableHttpClient httpClient = HttpClientBuilder.create().build();
@@ -39,5 +40,9 @@ public class HttpClient {
 
     public String getAuthoritiesJsonString() throws IOException {
         return getContent(AUTHORITIES);
+    }
+
+    public String getEstablishmentsJsonString(String localAuthorityId) throws IOException {
+        return getContent(ESTABLISHMENTS + localAuthorityId);
     }
 }
