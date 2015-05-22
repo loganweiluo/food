@@ -3,8 +3,8 @@ package rating.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import rating.model.Authority;
-import rating.service.AuthorityService;
+import rating.authority.Authority;
+import rating.authority.AuthorityService;
 
 import java.io.IOException;
 import java.util.List;

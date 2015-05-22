@@ -1,4 +1,4 @@
-package rating.model;
+package rating.authority;
 
 /**
  * Created by weiluo on 20/05/15.
