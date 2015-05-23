@@ -13,6 +13,11 @@ import static java.lang.Math.round;
  * Created by weiluo on 22/05/15.
  */
 public class DistributionCalculator {
+    /**
+     * Calculates the percentage distribution of rating values.
+     * @param establishments a list of establishments.
+     * @return a list of rating distributions representing rating values and their percentage.
+     */
     public List<RatingDistribution> calculateDistribution(List<Establishment> establishments) {
 
         ArrayList<RatingDistribution> result = new ArrayList<>();

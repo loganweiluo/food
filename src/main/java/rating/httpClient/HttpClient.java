@@ -13,6 +13,10 @@ import java.io.IOException;
 /**
  * Created by weiluo on 22/05/15.
  */
+
+/**
+ * Makes API call.
+ */
 public class HttpClient {
 
     public static final String ROOT_URL = "api.ratings.food.gov.uk";
@@ -38,10 +42,21 @@ public class HttpClient {
         return result;
     }
 
+    /**
+     * Retrieves information of authorities.
+     * @return a json string that contains information of authorities.
+     * @throws IOException
+     */
     public String getAuthoritiesJsonString() throws IOException {
         return getContent(AUTHORITIES);
     }
 
+    /**
+     * Retrieves information of establishments.
+     * @param localAuthorityId id of local authority.
+     * @return a json string that contains information of establishments.
+     * @throws IOException
+     */
     public String getEstablishmentsJsonString(String localAuthorityId) throws IOException {
         if(localAuthorityId==null || localAuthorityId.isEmpty()){
             throw new IllegalArgumentException("Local authority id must not be empty.");

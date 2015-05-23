@@ -3,6 +3,10 @@ package rating.distribution;
 /**
  * Created by weiluo on 22/05/15.
  */
+
+/**
+ * A model that represents the rating values and their percentages.
+ */
 public class RatingDistribution {
     private String ratingValue;
     private double percentage;

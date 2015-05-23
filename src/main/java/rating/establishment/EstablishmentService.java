@@ -20,10 +20,20 @@ public class EstablishmentService {
         this.client = client;
     }
 
+    /**
+     * Retrieves a list of Establishments.
+     *
+     * @param localAuthorityId the id of local authority.
+     * @return a list of Establishments containing rating values.
+     * @throws IOException
+     */
     public List<Establishment> getEstablishments(String localAuthorityId) throws IOException {
-        ArrayList<Establishment> result = new ArrayList<>();
-
         String establishmentsJsonString = client.getEstablishmentsJsonString(localAuthorityId);
+        return parseEstablishmentJsonString(establishmentsJsonString);
+    }
+
+    private List<Establishment> parseEstablishmentJsonString(String establishmentsJsonString) {
+        ArrayList<Establishment> result = new ArrayList<>();
         JsonElement element = new JsonParser().parse(establishmentsJsonString);
         JsonObject object = element.getAsJsonObject();
         JsonArray authorities = object.getAsJsonArray("establishments");

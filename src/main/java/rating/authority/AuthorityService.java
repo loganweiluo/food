@@ -21,10 +21,19 @@ public class AuthorityService {
         this.client = client;
     }
 
+    /**
+     * Retrieves a list of authorities.
+     *
+     * @return a list of authorities.
+     * @throws IOException
+     */
     public List<Authority> getAuthorities() throws IOException {
-        ArrayList<Authority> result = new ArrayList<>();
-
         String authoritiesJsonString = client.getAuthoritiesJsonString();
+        return parseAuthorityJsonString(authoritiesJsonString);
+    }
+
+    private List<Authority> parseAuthorityJsonString(String authoritiesJsonString) {
+        ArrayList<Authority> result = new ArrayList<>();
         JsonElement element = new JsonParser().parse(authoritiesJsonString);
         JsonObject object = element.getAsJsonObject();
         JsonArray authorities = object.getAsJsonArray("authorities");

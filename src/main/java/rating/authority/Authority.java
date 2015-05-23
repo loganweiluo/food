@@ -3,6 +3,10 @@ package rating.authority;
 /**
  * Created by weiluo on 20/05/15.
  */
+
+/**
+ * A model that represents authority.
+ */
 public class Authority {
     private String id;
     private String name;

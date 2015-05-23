@@ -6,6 +6,9 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Adds header to response that allows cross domain reference.
+ */
 @Component
 public class CORSFilter implements Filter {
 
