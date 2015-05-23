@@ -43,6 +43,9 @@ public class HttpClient {
     }
 
     public String getEstablishmentsJsonString(String localAuthorityId) throws IOException {
+        if(localAuthorityId==null || localAuthorityId.isEmpty()){
+            throw new IllegalArgumentException("Local authority id must not be empty.");
+        }
         return getContent(ESTABLISHMENTS + localAuthorityId);
     }
 }

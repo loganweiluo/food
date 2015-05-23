@@ -27,6 +27,5 @@ public class HttpClientTest {
         assertTrue(establishmentsJsonString.length() > 0);
 
         System.out.println(establishmentsJsonString);
-//        assertTrue(establishmentsJsonString.contains("authorities"));
     }
 }
